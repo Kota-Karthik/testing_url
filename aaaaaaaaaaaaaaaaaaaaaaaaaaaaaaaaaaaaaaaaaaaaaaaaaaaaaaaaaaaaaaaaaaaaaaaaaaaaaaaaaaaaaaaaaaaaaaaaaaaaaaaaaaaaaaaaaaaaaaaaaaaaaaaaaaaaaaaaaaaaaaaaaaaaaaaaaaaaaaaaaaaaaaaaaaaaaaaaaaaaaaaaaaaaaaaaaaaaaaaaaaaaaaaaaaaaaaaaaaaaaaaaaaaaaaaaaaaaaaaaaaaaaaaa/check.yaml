@@ -1,15 +1,16 @@
-apiVersion: harness.io/v1
-kind: API
-name: testinggg urll length
-identifier: testinggg_urll_length
-type: openapi
-owner: group:account/JK_Test
-spec:
-  lifecycle: production
-  definition: https://app.harness.io/ng/account/AM8HCbDiTXGQNrTIhNl7qQ/all/code/orgs/Implementation_Engineering_Repositories/projects/Harness_Solutions_Factory/repos/harness-platform-management/files/main/~/template_library/central-build-farm-setup/.harness/catalog_template.yaml
-  ownedBy:
-    - group:account/JK_Test
+apiVersion: backstage.io/v1alpha1
+kind: Component
 metadata:
-  description: asdada
-  tags:
-    - adsd
+  name: artist-web
+  description: The place to be, for great artists
+spec:
+  type: website
+  lifecycle: production
+  owner: artist-relations-team
+  system: artist-engagement-portal
+  dependsOn:
+    - resource:default/artists-db
+  dependencyOf:
+    - component:default/artist-web-lookup
+  providesApis:
+    - artist-api
