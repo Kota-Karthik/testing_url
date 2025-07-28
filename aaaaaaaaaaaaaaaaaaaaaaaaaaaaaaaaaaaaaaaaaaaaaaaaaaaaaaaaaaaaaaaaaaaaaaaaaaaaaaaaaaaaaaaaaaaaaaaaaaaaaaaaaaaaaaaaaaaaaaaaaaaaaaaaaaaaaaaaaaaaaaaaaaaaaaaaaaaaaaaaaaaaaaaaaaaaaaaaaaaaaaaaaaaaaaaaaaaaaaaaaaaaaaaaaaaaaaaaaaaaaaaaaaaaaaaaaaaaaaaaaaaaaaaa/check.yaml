@@ -1,0 +1,15 @@
+apiVersion: harness.io/v1
+kind: API
+name: testinggg urll length
+identifier: testinggg_urll_length
+type: openapi
+owner: group:account/JK_Test
+spec:
+  lifecycle: production
+  definition: https://app.harness.io/ng/account/AM8HCbDiTXGQNrTIhNl7qQ/all/code/orgs/Implementation_Engineering_Repositories/projects/Harness_Solutions_Factory/repos/harness-platform-management/files/main/~/template_library/central-build-farm-setup/.harness/catalog_template.yaml
+  ownedBy:
+    - group:account/JK_Test
+metadata:
+  description: asdada
+  tags:
+    - adsd
