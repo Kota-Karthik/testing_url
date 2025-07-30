@@ -4,6 +4,7 @@ metadata:
   name: testing_new_issue
   description: The place to be, for great artists
 spec:
+  type: service
   lifecycle: Production
   providesApis:
     - api:billing-api
