@@ -5,6 +5,7 @@ metadata:
   description: The place to be, for great artists
 spec:
   type: service
+  owner: team-idp
   lifecycle: Production
   providesApis:
     - api:billing-api
