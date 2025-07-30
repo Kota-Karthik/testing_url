@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: testing_new_issue
+  description: The place to be, for great artists
+spec:
+  lifecycle: Production
+  providesApis:
+    - api:billing-api
+    - api:invoice-api
+  dependsOn:
+    - component:agniva-jenkins-new
+    - component:AUTOMATION-DONOTDELETE
+    - component:idp
