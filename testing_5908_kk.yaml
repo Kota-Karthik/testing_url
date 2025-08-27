@@ -9,5 +9,6 @@ spec:
   lifecycle: experimental
   definition: $text "https://app.harness.io/prod1/ccm/api/openapi.json"
 metadata:
+  name: testing_5908_kk
   description: ""
   tags: []
