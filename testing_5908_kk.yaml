@@ -7,7 +7,7 @@ owner: user:account/timothy.davis@harness.io
 scope: ACCOUNT
 spec:
   lifecycle: experimental
-  definition: "https://app.harness.io/prod1/ccm/api/openapi.json"
+  definition: $text "https://app.harness.io/prod1/ccm/api/openapi.json"
 metadata:
   description: ""
   tags: []
