@@ -1,16 +1,28 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: testing_new_issue
-  description: The place to be, for great artists
+  namespace: default12344
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    gitlab.com/project-id: wwereq
+    jira/project-key: IDP
+    jenkins.io/github-folder: CDS-egggggggggg
+    firehydrant.com/service-name: pytho1122
+    backstage.io/kubernetes-label-selector: app=idp-ui00000
+    backstage.io/kubernetes-namespace: 63feee14cbf66e3c798c4bdc
+    github.com/project-slug: vigneswara-propelo/python-pipeline-samples
+    harness.io/pipelines: >
+      Build:
+      https://laxmiharness.pr2.harness.io/ng/account/6cBjZs_fTWCiRITqFyRrgQ/module/ci/orgs/default/projects/IDP/pipelines/TestUpdateCatalog/pipeline-studio/?storeType=INLINE
+    grafana/dashboard-selector: (tags @> 'prometheus' || tags @> 'blackbox')
+    pagerduty.com/service-id: PT5ED69
+  name: karthik-test
+  tags:
+    - python-test
+    - python123
 spec:
   type: service
-  owner: team-idp
-  lifecycle: Production
+  lifecycle: experimental
+  owner: harness_account_all_users1
   providesApis:
-    - api:billing-api
-    - api:invoice-api
-  dependsOn:
-    - component:agniva-jenkins-new
-    - component:AUTOMATION-DONOTDELETE
-    - component:idp
+    - idp-Service-api
