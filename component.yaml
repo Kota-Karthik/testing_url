@@ -23,6 +23,6 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: karthik
+  owner: group:karthik
   providesApis:
     - idp-Service-api
