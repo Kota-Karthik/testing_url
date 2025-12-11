@@ -1,14 +1,10 @@
 apiVersion: harness.io/v1
-kind: api
-name: testing_5908_kk
-identifier: testing_5908_kk
-type: openapi
-owner: user:account/timothy.davis@harness.io
-scope: ACCOUNT
+kind: API
+name: test_git1
+identifier: test_git1
+type: test
+owner: user:account/admin@harness.io
 spec:
   lifecycle: experimental
-  definition: $text "https://app.harness.io/prod1/ccm/api/openapi.json"
-metadata:
-  name: testing_5908_kk
-  description: ""
-  tags: []
+  definition: test
+metadata: {}
