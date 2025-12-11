@@ -1,27 +1,10 @@
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  annotations:
-    backstage.io/techdocs-ref: dir:.
-    gitlab.com/project-id: wwereq
-    jira/project-key: IDP
-    jenkins.io/github-folder: CDS-egggggggggg
-    firehydrant.com/service-name: pytho1122
-    backstage.io/kubernetes-label-selector: app=idp-ui00000
-    backstage.io/kubernetes-namespace: 63feee14cbf66e3c798c4bdc
-    github.com/project-slug: vigneswara-propelo/python-pipeline-samples
-    harness.io/pipelines: >
-      Build:
-      https://laxmiharness.pr2.harness.io/ng/account/6cBjZs_fTWCiRITqFyRrgQ/module/ci/orgs/default/projects/IDP/pipelines/TestUpdateCatalog/pipeline-studio/?storeType=INLINE
-    grafana/dashboard-selector: (tags @> 'prometheus' || tags @> 'blackbox')
-    pagerduty.com/service-id: PT5ED69
-  name: karthik-test
-  tags:
-    - python-test
-    - python123
+apiVersion: harness.io/v1
+kind: API
+name: test_git2
+identifier: test_git2
+type: test
+owner: user:account/admin@harness.io
 spec:
-  type: service
   lifecycle: experimental
-  owner: group:default/karthik
-  providesApis:
-    - idp-Service-api
+  definition: test
+metadata: {}
