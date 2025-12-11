@@ -1,42 +1,10 @@
-apiVersion: scaffolder.backstage.io/v1beta3
-kind: Template
-metadata:
-  name: testing_url_2
-  title: Test pipeline using Workflows
+apiVersion: harness.io/v1
+kind: API
+name: test_git3
+identifier: test_git3
+type: test
+owner: user:account/admin@harness.io
 spec:
-  owner: name.owner
-  type: service
-  parameters:
-    - title: Repository Name
-      properties:
-        project_name:
-          title: Name your project
-          ui:readonly: true
-          type: string
-        uploaded_file:
-          title: Upload File
-          type: string
-          format: data-url
-          description: Upload a file that will be processed in the workflow
-          ui:backstage:
-            review:
-              show: false
-              mask: true
-        token:
-          title: Harness Token
-          type: string
-          ui:widget: password
-          ui:field: HarnessAuthToken
-  steps:
-    - id: trigger
-      name: Creating your github repository
-      action: trigger:harness-custom-pipeline
-      input:
-        url: PIPELINE_URL
-        inputset:
-          github_org: ${{ parameters.project_name }}
-        apikey: ${{ parameters.token }}
-  output:
-    links:
-      - title: Pipeline Details
-        url: ${{ steps.trigger.output.PipelineUrl }}
+  lifecycle: experimental
+  definition: test
+metadata: {}
