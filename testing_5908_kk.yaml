@@ -1,10 +1,9 @@
 apiVersion: harness.io/v1
 kind: API
-name: test_git1
-identifier: test_git1
 type: test
+identifier: test_git1
+name: test_git1
 owner: user:account/admin@harness.io
 spec:
-  lifecycle: experimental
+  lifecycle: experimenta
   definition: test
-metadata: {}
