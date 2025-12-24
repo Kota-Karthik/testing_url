@@ -4,6 +4,8 @@ type: test
 identifier: test_git5
 name: test_git5
 owner: user:account/admin@harness.io
+projectIdentifier: IDP_TEST
+orgIdentifier: default
 spec:
   lifecycle: experimenta
   definition: test
