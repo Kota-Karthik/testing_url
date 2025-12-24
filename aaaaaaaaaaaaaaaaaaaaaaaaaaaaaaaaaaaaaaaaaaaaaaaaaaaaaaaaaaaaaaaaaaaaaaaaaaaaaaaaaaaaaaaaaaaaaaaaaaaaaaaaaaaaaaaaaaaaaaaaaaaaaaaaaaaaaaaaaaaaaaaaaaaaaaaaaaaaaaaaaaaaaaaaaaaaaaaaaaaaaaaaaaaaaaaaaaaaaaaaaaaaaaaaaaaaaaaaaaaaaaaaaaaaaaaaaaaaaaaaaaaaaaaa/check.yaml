@@ -1,42 +1,84 @@
-apiVersion: scaffolder.backstage.io/v1beta3
-kind: Template
+apiVersion: harness.io/v1
+kind: Workflow
+name: Deploy service
+identifier: deploydemoservice
+type: service
+owner: user:deepesh.kumar@harness.io
 metadata:
-  name: testing_kk_url_1
-  title: Test pipeline using Workflows
+  description: A template to Deploy service
 spec:
-  owner: name.owner
-  type: service
+  presentation:
+    customTitle: Deploy Your Application
+    customSubTitle: Deploy Your Application to AWS/Azure/GCP
+    customCreateButtonText: Deploy Now
+  userFieldMapping:
+    userEmail: email
+    name: name
+  output:
+    links:
+      - title: Pipeline Details
+        url: ${{ steps.trigger.output.PipelineUrl }}
   parameters:
-    - title: Repository Name
+    - title: Deploy service
       properties:
-        project_name:
-          title: Name your project
-          ui:readonly: true
+        deubgdata:
+          title: User Email
           type: string
-        uploaded_file:
+          ui:field: ContextViewer
+          ui:options:
+            getContextData: ${{formContext}}
+        testField1:
+          title: Select a User (with user context in headers)
+          type: string
+          description: This field will send userEmail and uid as headers to the API
+          ui:field: SelectFieldFromApi
+          ui:options:
+            title: Select User
+            description: Choose a user from JSONPlaceholder
+            path: /catalog/entities
+            valueSelector: metadata.uid
+            labelSelector: metadata.name
+            appendUser:
+              data:
+                - userEmail
+                - name
+              location:
+                - query
+        upload_file:
           title: Upload File
           type: string
-          format: data-url
-          description: Upload a file that will be processed in the workflow
-          ui:backstage:
-            review:
-              show: false
-              mask: true
+          description: Upload any file (try with 100KB+)
+          ui:widget: file
+        username:
+          title: Username
+          type: string
+        apiKeySecret:
+          title: API Key Secret
+          type: string
+        version:
+          title: Version
+          type: string
         token:
           title: Harness Token
           type: string
           ui:widget: password
           ui:field: HarnessAuthToken
   steps:
+    - id: createsecret
+      name: Create Harness secret
+      action: harness:create-secret
+      input:
+        projectId: Deepesh_CDE
+        orgId: default
+        secretValue: HelloWorld
+        apikey: ${{ parameters.token }}
     - id: trigger
-      name: Creating your github repository
+      name: Run Deploy service
       action: trigger:harness-custom-pipeline
       input:
-        url: PIPELINE_URL
+        url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/all/orgs/default/projects/Deepesh_CDE/pipelines/Idptemplate/pipeline-studio/?storeType=INLINE
         inputset:
-          github_org: ${{ parameters.project_name }}
-        apikey: ${{ parameters.token }}
-  output:
-    links:
-      - title: Pipeline Details
-        url: ${{ steps.trigger.output.PipelineUrl }}
+          username: ${{ parameters.username }}
+          name: ${{ parameters.name }}
+          uploadfile: $ {{ parameters.upload_file }}
+        apiKeySecret: ${{ parameters.apiKeySecret }}
