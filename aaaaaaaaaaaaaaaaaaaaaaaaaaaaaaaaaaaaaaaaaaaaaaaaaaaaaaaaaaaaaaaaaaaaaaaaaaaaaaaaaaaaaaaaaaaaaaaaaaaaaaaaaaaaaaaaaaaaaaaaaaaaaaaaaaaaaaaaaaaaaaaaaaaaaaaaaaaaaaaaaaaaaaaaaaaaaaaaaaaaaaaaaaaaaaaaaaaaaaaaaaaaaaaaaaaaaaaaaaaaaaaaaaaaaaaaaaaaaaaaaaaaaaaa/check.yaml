@@ -1,7 +1,7 @@
 apiVersion: harness.io/v1
 kind: Workflow
-name: Deploy service
-identifier: deploydemoservice
+name: testingImportThirdParty
+identifier: testingImportThirdParty
 type: service
 owner: user:deepesh.kumar@harness.io
 metadata:
