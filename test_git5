@@ -1,0 +1,9 @@
+apiVersion: harness.io/v1
+kind: API
+type: test
+identifier: test_git5
+name: test_git5
+owner: user:account/admin@harness.io
+spec:
+  lifecycle: experimenta
+  definition: test
