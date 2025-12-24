@@ -1,0 +1,15 @@
+apiVersion: harness.io/v1
+kind: Component
+name: final_test_consumesApisGit
+identifier: final_test_consumesApisGit
+type: component
+owner: user:account/kota.karthik@harness.io
+spec:
+  lifecycle: test
+  providesApis:
+    - api:account/test_git2
+  consumesApis:
+    - api:account.default/test_git6
+    - api:account/test_git1
+    - api:account/grpc-docs-test
+metadata: {}
