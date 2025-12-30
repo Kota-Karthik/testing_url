@@ -1,0 +1,17 @@
+apiVersion: harness.io/v1
+kind: Component
+name: final_test_consumesApis_updateOn_Git
+identifier: final_test_consumesApis_updateOn_Git
+type: test
+owner: user:account/kota.karthik@harness.io
+spec:
+  lifecycle: experimental
+  providesApis:
+    - api:account/test2
+    - api:account/test_git2
+  consumesApis:
+    - api:account/test3
+    - api:account/test1
+    - api:account/test_git1
+    - api:account/test_git3
+metadata: {}
