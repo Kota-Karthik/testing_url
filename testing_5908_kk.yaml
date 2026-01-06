@@ -1,14 +1,13 @@
-apiVersion: harness.io/v1
+apiVersion: backstage.io/v1alpha1
 kind: Component
-name: test
-identifier: test
-type: test
-owner: user:account/ishan.gude@harness.io
-spec:
-  lifecycle: experimental
 metadata:
+  name: test
   annotations:
     bugsnag.com/project-key: Harness/app.propelo.ai
     jenkins.io/job-full-name: Venkat-JAR-pipeline
   tags:
     - dfdf
+spec:
+  type: test
+  lifecycle: experimental
+  owner: user:account/ishan.gude@harness.io
