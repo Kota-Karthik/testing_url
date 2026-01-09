@@ -1,0 +1,11 @@
+apiVersion: harness.io/v1
+kind: Component
+name: final_test_consumesApisGit
+identifier: final_test_consumesApisGit
+type: component
+owner: user:account/kota.karthik@harness.io
+spec:
+  lifecycle: test
+metadata: 
+  annotations:
+    backstage.io/source-location: url:https://github.com/Kota-Karthik/testing_url/new/main
