@@ -8,4 +8,4 @@ spec:
   lifecycle: test
 metadata:
   annotations:
-    backstage.io/source-location: url:https://bitbucket.org/karthikidp/test_harness/src/main/
+    backstage.io/source-location: url:https://bitbucket.org/karthikidp/test_harness
