@@ -1,0 +1,253 @@
+apiVersion: harness.io/v1
+kind: Workflow
+name: WAF / Cloudflare - Onboarding Workflow (DEV) [INTERNAL TEST ONLY]
+identifier: WAF_Cloudflare_Onboarding_Workflow_DEV
+type: workflow
+owner: group:project/nsafp9infosecnsafpprojectadminodevharnessgp
+scope: PROJECT
+projectIdentifier: NetSec_Automation_Framework
+orgIdentifier: Information_Security
+metadata:
+description: |
+**Important Information & Prerequisites for New Site Onboarding to WAF / Cloudflare:**
+- This workflow is only for **new application/site onboarding**. If you need to **migrate an existing site to Cloudflare**, please reach out to the **InfoSec WAF team**.
+- **Certificate in AppViewX**:
+- A valid SSL certificate for the site must be generated in AppViewX before submitting this workflow. Without it, the pipeline will fail.
+- **DNS Dependency:**
+- A WorkOrder will be raised and assigned to the DNS team/Support group to update the DNS records. The workflow will wait until the WorkOrder is completed and the DNS records are updated.
+- If the pipeline fails or remains pending, please follow up with the DNS team.
+- **Internet only**:
+- Cloudflare can only be used for Internet-facing web services. It cannot be applied to internal environments.
+- **Port**:
+- The hostname must only serve the web service being onboarded behind Cloudflare (i.e., do not use for non-HTTP services such as SFTP).
+- The web service must be configured to listen on TCP/443.
+- **WebSite & API**:
+- A site should not host both API and Website together.
+- If the site is an API, include “api” in the URL/FQDN name. Example: www.pes-ip-api.shareable.com.
+- For any queries or pipeline issues, kindly reach out to **PDLInfosecWAF@transunion.com**.
+tags:
+- cloudflare
+- netsec-devsecops
+- nsafp
+- waf
+spec:
+parameters:
+- title: Site / Application Information
+required:
+- domain_name
+- environment_type
+- site_type
+- restriction_level
+- certificate_avx
+- use_mtls
+- backend_dns
+- hosted_location
+- payment_site
+properties:
+domain_name:
+title: Hostname / Domain Name
+type: string
+description: Example: score.cibil.com
+pattern: ^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$
+ui:autofocus: true
+environment_type:
+title: Environment Type
+type: string
+description: Specify where the site will be onboarded.
+enum:
+- prod
+- stage
+- uat
+enumNames:
+- Prod
+- Stage
+- UAT / Client Test
+site_type:
+title: Site Type
+type: string
+description: Is this a consumer website (e.g., score.cibil.com) or a B2B API (e.g., truevision)?
+enum:
+- api
+- website
+enumNames:
+- API
+- Website
+restriction_level:
+title: Restriction Level
+type: string
+ui:widget: radio
+default: null
+enum:
+- open
+- ips_restricted
+- tu_restricted
+enumNames:
+- Open to general internet
+- Restricted to specific IPs
+- Restricted to TU
+ui:options:
+inline: false
+description: |
+For **Stage** environment, anything other than **Restricted to TU** requires a Risk Exception.
+risk_exception:
+title: Risk Exception
+type: string
+description: |
+Mandatory if you selected anything other than **Restricted to TU** for **Stage** environment.
+allowed_ips:
+title: IP Address / IP Ranges
+description: |
+Provide IPs if you selected the restriction level - **Restricted to specific IPs**.
+type: array
+minItems: 0
+ui:options:
+addable: true
+removable: true
+items:
+type: string
+certificate_avx:
+title: Certificate name in AppViewX
+type: string
+description: |
+Provide the certificate name which is present in AppViewX for the requested domain.
+pattern: ^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$
+use_mtls:
+title: mTLS / Client Certificate Authentication?
+type: string
+ui:widget: radio
+default: null
+enum:
+- yes
+- no
+enumNames:
+- Yes
+- No
+ui:options:
+inline: false
+description: |
+Does the site require mTLS / Client Certificate authentication to restrict access?
+backend_dns:
+title: Backend / Origin Server Information
+description: |
+Provide IP Address or DNS Name where Cloudflare should point:
+- If On-Prem: GTM DNS record or external IP address(es).
+- If AWS or equivalent Cloud service: Expected DNS record for the service.
+type: string
+hosted_location:
+title: Hosted Location
+type: string
+description: Where is the origin server hosted?
+enum:
+- aws
+- gcp
+- azure
+- on-prem
+enumNames:
+- AWS
+- GCP
+- Azure
+- On-Prem
+payment_site:
+title: Does your site has any Payments processing?
+type: string
+ui:widget: radio
+default: null
+enum:
+- yes
+- no
+enumNames:
+- Yes
+- No
+payment_gateway:
+title: Payment Gateway
+type: string
+description: |
+Mandatory if you selected "**Yes**" above.
+token:
+title: Harness Token
+type: string
+ui:widget: password
+ui:field: HarnessAuthToken
+errorMessage:
+properties:
+domain_name: Please selet a valid Hostname / Domain Name.
+
+- title: Contact Information
+required:
+- requester_name
+- requester_email
+- communication_pdl
+- business_owner
+- technical_owner
+properties:
+requester_name:
+title: Requester Name
+type: string
+pattern: ^([a-zA-Z][a-zA-Z0-9\s]*)$
+requester_email:
+title: Requester Email
+type: string
+pattern: ^([a-zA-Z0-9_.]{1,}(@transunion.com))$
+communication_pdl:
+title: Communication PDL
+type: string
+description: Email ID for team communication.
+pattern: ^([a-zA-Z0-9_.]{1,}(@transunion.com))$
+business_owner:
+title: Business Owner
+type: string
+pattern: ^([a-zA-Z][a-zA-Z0-9\s]*)$
+description: |
+Provide application business owner details (e.g., OneTru Foundations).
+technical_owner:
+title: Technical Owner
+type: string
+pattern: ^([a-zA-Z][a-zA-Z0-9\s]*)$
+description: |
+Provide application technical owner details (e.g., OneTru Foundations).
+errorMessage:
+properties:
+requester_email: "Please enter a valid Email ID. eg. firstname_lastname@transunion.com"
+communication_pdl: "Please enter a valid PDL. eg. **MY_TEAM_PDL@transunion.com"
+
+- title: Additional Information
+properties:
+additional_info:
+title: Additional Information
+type: string
+description: |
+Record any additional requirements not covered in previous sections.
+ui:widget: textarea
+
+steps:
+- id: waf_pipeline
+name: Triggering WAF / Cloudflare Onboarding Pipeline
+action: trigger:harness-custom-pipeline
+input:
+url: https://transunion.harness.io/ng/account/HgTKqISVTX-kQSVsWCHEcA/all/orgs/Information_Security/projects/NetSec_Automation_Framework/pipelines/waf_onboarding/pipeline-studio/?repoName=gcp-foundational-netsec-automation-test&connectorRef=&storeType=REMOTE&branch=develop
+inputset:
+domain_name: ${{ parameters.domain_name }}
+environment_type: ${{ parameters.environment_type }}
+site_type: ${{ parameters.site_type }}
+restriction_level: ${{ parameters.restriction_level }}
+risk_exception: ${{ parameters.risk_exception }}
+allowed_ips: ${{ parameters.allowed_ips }}
+use_mtls: ${{ parameters.use_mtls }}
+certificate_avx: ${{ parameters.certificate_avx }}
+backend_dns: ${{ parameters.backend_dns }}
+hosted_location: ${{ parameters.hosted_location }}
+payment_site: ${{ parameters.payment_site }}
+payment_gateway: ${{ parameters.payment_gateway }}
+requester_name: ${{ parameters.requester_name }}
+requester_email: ${{ parameters.requester_email }}
+communication_pdl: ${{ parameters.communication_pdl }}
+business_owner: ${{ parameters.business_owner }}
+technical_owner: ${{ parameters.technical_owner }}
+additional_info: ${{ parameters.additional_info }}
+apikey: ${{ parameters.token }}
+showOutputVariables: true
+
+output:
+links:
+- title: Cloudflare / WAF Pipeline Execution Dashboard
+url: ${{ steps.waf_pipeline.output.PipelineUrl }}
