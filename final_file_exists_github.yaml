@@ -6,6 +6,13 @@ name: final_test_consumesApisGit
 owner: user:account/kota.karthik@harness.io
 spec:
   lifecycle: test
+  sourceCode:
+    provider: Github
+    repoName: testing_url
+    connectorRef: account.karthik_connector
+    branch: main
+    monoRepo: false
+    url: https://github.com/Kota-Karthik/testing_url/tree/main
 metadata:
   annotations:
     backstage.io/source-location: url:https://bitbucket.org/karthikidp/test_harness
