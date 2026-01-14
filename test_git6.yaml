@@ -7,3 +7,5 @@ owner: user:account/admin@harness.io
 spec:
   lifecycle: experimental
   definition: test
+  apiProvidedBy:
+    - component:account.default.Manisha/BG_service
