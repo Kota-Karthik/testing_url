@@ -4,7 +4,6 @@ type: test
 identifier: test_git6
 name: test_git6
 owner: user:account/admin@harness.io
-orgIdentifier: default
 spec:
   lifecycle: experimental
   definition: test
