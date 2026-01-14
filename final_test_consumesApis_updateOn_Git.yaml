@@ -1,19 +1,25 @@
 apiVersion: harness.io/v1
 kind: Component
-name: final_test_consumesApis_updateOn_Git
-identifier: final_test_consumesApis_updateOn_Git
 type: test
+identifier: final_test_consumesApis_updateOn_Git
+name: final_test_consumesApis_updateOn_Git
 owner: user:account/kota.karthik@harness.io
-projectIdentifier: Manisha
 orgIdentifier: default
+projectIdentifier: Manisha
 spec:
   lifecycle: experimental
   providesApis:
-    - api:account/test2
-    - api:account/test_git2
+  - api:account/test2
+  - api:account/test_git2
+  sourceCode:
+    provider: Github
+    repoName: testing_url
+    connectorRef: account.karthik_connector
+    branch: main
+    monoRepo: false
+    url: https://github.com/Kota-Karthik/testing_url/tree/main
   consumesApis:
-    - api:account/test3
-    - api:account/test1
-    - api:account/test_git1
-    - api:account/test_git3
-metadata: {}
+  - api:account/test3
+  - api:account/test1
+  - api:account/test_git1
+  - api:account/test_git3
