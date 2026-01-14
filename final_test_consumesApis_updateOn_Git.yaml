@@ -17,8 +17,3 @@ spec:
     branch: main
     monoRepo: false
     url: https://github.com/Kota-Karthik/testing_url/tree/main
-  consumesApis:
-  - api:account/test3
-  - api:account/test1
-  - api:account/test_git1
-  - api:account/test_git3
