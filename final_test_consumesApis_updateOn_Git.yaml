@@ -4,6 +4,8 @@ name: final_test_consumesApis_updateOn_Git
 identifier: final_test_consumesApis_updateOn_Git
 type: test
 owner: user:account/kota.karthik@harness.io
+orgId: default
+projectId: Manisha
 spec:
   lifecycle: experimental
   providesApis:
