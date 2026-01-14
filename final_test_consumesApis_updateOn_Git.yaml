@@ -1,6 +1,6 @@
 apiVersion: harness.io/v1
 kind: Component
-type: test
+type: service
 identifier: final_test_consumesApis_updateOn_Git
 name: final_test_consumesApis_updateOn_Git
 owner: user:account/kota.karthik@harness.io
