@@ -9,8 +9,7 @@ projectIdentifier: Manisha
 spec:
   lifecycle: experimental
   providesApis:
-  - api:account/test2
-  - api:account/test_git2
+  - api:account/test_git6
   sourceCode:
     provider: Github
     repoName: testing_url
