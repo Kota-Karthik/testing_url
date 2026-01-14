@@ -14,4 +14,6 @@ spec:
     - api:account.default/test_git6
     - api:account/test_git1
     - api:account/grpc-docs-test
-metadata: {}
+metadata:
+  tags:
+    - test
