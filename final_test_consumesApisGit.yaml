@@ -6,7 +6,7 @@ type: component
 owner: user:account/kota.karthik@harness.io
 spec:
   dependsOn:
-    - component:account.DND_KK/bugBash_test_kk
+    - resource:account/artistsdb_setup
   lifecycle: test
   providesApis:
     - api:account/test_git2
