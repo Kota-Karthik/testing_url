@@ -13,6 +13,3 @@ spec:
     branch: main
     monoRepo: false
     url: https://github.com/Kota-Karthik/testing_url/tree/main
-metadata:
-  annotations:
-    backstage.io/source-location: url:https://bitbucket.org/karthikidp/test_harness
