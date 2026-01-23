@@ -23,13 +23,13 @@ spec:
 
   dependsOn:
     - resource:account/test2
-    - component:account/xyzabc123
+    - component:default/agniva-testing-harness-code-yaml
     - resource:account/test
-    - component:account/catalog_test_is_debezium_active
+    - component:default/agniva-world-app-plugins
 
   hasPart:
     - resource:account/test3
     - resource:account/test4
-    - component:account/final_test_consumesApis_updateOn_Git
-    - component:account/idpadmin2
+    - component:default/ALLUPPERCASE
+    - component:default/AUTOMATION-DONOTDELETE
     - system:account/testsystem
