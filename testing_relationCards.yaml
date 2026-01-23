@@ -8,7 +8,7 @@ metadata:
   annotations:
     backstage.io/managed-by-location: harness
 spec:
-  type: service
+  type: karthiktestrelationscard
   lifecycle: experimental
   owner: user:account/ishan.gude@harness.io
 
