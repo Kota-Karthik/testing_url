@@ -19,7 +19,7 @@ spec:
   consumesApis:
     - api:default/grpc-docs-test
 
-  system: account/test_demo_system
+  system: default/billing-system
 
   dependsOn:
     - resource:default/jenkins
@@ -32,4 +32,4 @@ spec:
     - resource:default/payments-db
     - component:default/ALLUPPERCASE
     - component:default/AUTOMATION-DONOTDELETE
-    - system:account/testsystem
+    - system:default/payments-system
