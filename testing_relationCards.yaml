@@ -1,0 +1,35 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: karthiktestrelationscard
+  tags:
+    - testtags
+    - javascript
+  annotations:
+    backstage.io/managed-by-location: harness
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:account/ishan.gude@harness.io
+
+  providesApis:
+    - api:account/test2
+    - api:account/test1
+
+  consumesApis:
+    - api:account/test3
+
+  system: account/test_demo_system
+
+  dependsOn:
+    - resource:account/test2
+    - component:account/xyzabc123
+    - resource:account/test
+    - component:account/catalog_test_is_debezium_active
+
+  hasPart:
+    - resource:account/test3
+    - resource:account/test4
+    - component:account/final_test_consumesApis_updateOn_Git
+    - component:account/idpadmin2
+    - system:account/testsystem
