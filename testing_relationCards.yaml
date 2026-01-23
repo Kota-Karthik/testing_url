@@ -22,14 +22,14 @@ spec:
   system: account/test_demo_system
 
   dependsOn:
-    - resource:account/test2
+    - resource:default/jenkins
     - component:default/agniva-testing-harness-code-yaml
-    - resource:account/test
+    - resource:default/payments-db
     - component:default/agniva-world-app-plugins
 
   hasPart:
-    - resource:account/test3
-    - resource:account/test4
+    - resource:default/jenkins
+    - resource:default/payments-db
     - component:default/ALLUPPERCASE
     - component:default/AUTOMATION-DONOTDELETE
     - system:account/testsystem
