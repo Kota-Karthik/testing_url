@@ -1,0 +1,12 @@
+apiVersion: harness.io/v1
+kind: component
+name: test-delegate-remote
+identifier: testdelegateremote
+type: service
+owner: user:account/ishan.gude+rbac@harness.io
+scope: ACCOUNT
+spec:
+  lifecycle: test-delegate
+metadata:
+  tags: []
+  description: ""
