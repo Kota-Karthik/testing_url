@@ -15,4 +15,4 @@ spec:
     url: https://github.com/Kota-Karthik/testing_url/tree/main
 metadata:
   annotations:
-    backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: url:https://bitbucket.org/testing_harness23/test/src/main
