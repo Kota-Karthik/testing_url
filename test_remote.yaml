@@ -9,7 +9,7 @@ spec:
   lifecycle: experimental
   sourceCode:
     provider: Github
-    repoName: test
+    repoName: testing_url
     connectorRef: account.kk_connector_new
     branch: main
     monoRepo: false
