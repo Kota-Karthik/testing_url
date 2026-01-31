@@ -1,7 +1,7 @@
 apiVersion: harness.io/v1
 kind: Component
-name: test_remote
-identifier: test_remote
+name: test_remote_github
+identifier: test_remote_github
 type: service
 owner: test
 scope: ACCOUNT
