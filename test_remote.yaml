@@ -1,0 +1,17 @@
+apiVersion: harness.io/v1
+kind: Component
+name: test_remote
+identifier: test_remote
+type: service
+owner: test
+scope: ACCOUNT
+spec:
+  lifecycle: experimental
+  sourceCode:
+    provider: Github
+    repoName: test
+    connectorRef: account.kk_connector_new
+    branch: main
+    monoRepo: false
+    url: https://github.com/Kota-Karthik/testing_url/src/main
+metadata: {}
