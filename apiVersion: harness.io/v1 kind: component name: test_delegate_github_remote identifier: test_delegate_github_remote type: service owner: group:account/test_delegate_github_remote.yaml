@@ -1,0 +1,12 @@
+apiVersion: harness.io/v1
+kind: component
+name: test_delegate_github_remote
+identifier: test_delegate_github_remote
+type: service
+owner: group:account/_account_all_users
+scope: ACCOUNT
+spec:
+  lifecycle: test-delegate
+metadata:
+  tags: []
+  description: ""
