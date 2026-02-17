@@ -13,6 +13,7 @@ spec:
     branch: main
     monoRepo: false
     url: https://github.com/Kota-Karthik/testing_url/tree/main
+queryableEntityRef: DFszMnZhTFuIXV4H_8xMmw/component/test_delegate_github_remote
 metadata:
   annotations:
     backstage.io/techdocs-ref: url:https://bitbucket.org/testing_harness23/test/src/main
