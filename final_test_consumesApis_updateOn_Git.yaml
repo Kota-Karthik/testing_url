@@ -3,7 +3,7 @@ kind: Component
 type: service
 identifier: final_test_consumesApis_updateOn_Git
 name: final_test_consumesApis_updateOn_Git
-owner: user:account/kota.karthik@harness.io
+owner: group:account/_account_all_users
 orgIdentifier: default
 projectIdentifier: Manisha
 spec:
@@ -15,3 +15,5 @@ spec:
     branch: main
     monoRepo: false
     url: https://github.com/Kota-Karthik/testing_url/tree/main
+  providesApis:
+  - api:account/test_git6
