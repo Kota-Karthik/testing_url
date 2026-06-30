@@ -1,2 +1,8 @@
-{{ cookiecutter.project_name }}
-  test
+{
+  "project_name": "demo-app",
+  "owner": "platform-team",
+  "language": [
+    "python",
+    "node"
+  ]
+}
