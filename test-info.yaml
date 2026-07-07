@@ -1,0 +1,12 @@
+apiVersion: harness.io/v1
+kind: Component
+type: service
+identifier: test_something
+name: test_something
+owner: user:kota.karthik@harness.io
+spec:
+  lifecycle: experimental
+metadata:
+  description: test
+  annotations:
+    backstage.io/techdocs-ref: dir:.
