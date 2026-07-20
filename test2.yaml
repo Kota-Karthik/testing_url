@@ -1,0 +1,26 @@
+pipeline:
+  name: test
+  identifier: test
+  projectIdentifier: testautoidp
+  orgIdentifier: testautoidp
+  tags: {}
+  stages:
+    - parallel:
+        - stage:
+            name: test 1
+            identifier: test_1
+            description: ""
+            type: Pipeline
+            spec:
+              org: testautoidp
+              project: testautoidp
+              pipeline: hello_world_2
+        - stage:
+            name: test 2
+            identifier: test_2
+            description: ""
+            type: Pipeline
+            spec:
+              org: testautoidp
+              project: testautoidp
+              pipeline: hello_world_2
