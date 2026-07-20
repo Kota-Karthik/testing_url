@@ -1,6 +1,6 @@
 pipeline:
-  name: test
-  identifier: test
+  name: test2
+  identifier: test2
   projectIdentifier: testautoidp
   orgIdentifier: testautoidp
   tags: {}
