@@ -18,7 +18,7 @@ https://github.com/kubernetes/kubernetes
 
 https://aryah.pr2.harness.io/ng/account/HFM3bzxMRvmSz-1NfKR1Dg/module/idp/catalog/account/component/test
 
-../../../catalog/account/Component/test_techdocs_link
+[View Catalog Component](../../../catalog/account/Component/test_techdocs_link)
 
 ```bash
 git clone https://github.com/example/example-project.git
