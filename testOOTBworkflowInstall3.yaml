@@ -1,0 +1,61 @@
+apiVersion: harness.io/v1
+kind: Workflow
+type: service
+identifier: Create_GitHub_Repository
+name: Create GitHub Repository
+owner: group:account/_account_all_users
+spec:
+  output:
+    links:
+    - title: Pipeline Run
+      url: ${{ steps.run.output.PipelineUrl }}
+  parameters:
+  - title: Details
+    required:
+    - repo_name
+    - repo_org
+    - token
+    properties:
+      token:
+        title: Harness Token
+        type: string
+        ui:widget: password
+        ui:field: HarnessAuthToken
+      repo_name:
+        title: Repository Name
+        type: string
+        pattern: ^[a-zA-Z0-9._-]+$
+      repo_org:
+        title: GitHub Organization
+        type: string
+        description: Ignored when this workflow was installed in personal-account
+          mode (repo goes under the connector's user).
+      visibility:
+        title: Visibility
+        type: string
+        enum:
+        - private
+        - public
+        default: private
+      description:
+        title: Description
+        type: string
+  steps:
+  - id: run
+    name: Create GitHub Repository
+    action: trigger:harness-custom-pipeline
+    input:
+      url: https://qa.harness.io/ng/account/zEaak-FLS425IEO7OLzMUg/all/orgs/default/projects/testingkk/pipelines/Create_GitHub_Repository_ootb_create_github_repository/pipeline-studio/?storeType=INLINE
+      inputset:
+        repo_name: ${{ parameters.repo_name }}
+        repo_org: ${{ parameters.repo_org }}
+        visibility: ${{ parameters.visibility }}
+        description: ${{ parameters.description }}
+      apikey: ${{ parameters.token }}
+      showOutputVariables: true
+metadata:
+  description: Create an empty GitHub repository and optionally seed a README.
+  tags:
+  - ootb
+  - git
+  - day-0
