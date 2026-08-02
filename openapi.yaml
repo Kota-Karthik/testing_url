@@ -4,7 +4,7 @@ x-stoplight:
 info:
   title: Harness NextGen Software Delivery Platform API Reference
   version: '1.0'
-  description: This is the Open Api Spec 3 for the IDP Service. This is under active development. Beware of the breaking change with respect to the generated code stub.
+  description: This is the Open Api Spec 3 for the IDP Service. test branch = main. Beware of the breaking change with respect to the generated code stub.
   contact:
     name: API Support
     email: contact@harness.io
