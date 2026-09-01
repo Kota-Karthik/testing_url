@@ -9,7 +9,7 @@ This page tests that image-wrapped links render and navigate correctly.
 ## Test Case 1: Empty src image before content images
 
 <!-- This simulates MkDocs theme elements that may have empty src attributes -->
-<img src="" alt="placeholder-theme-icon" />
+<!-- <img src="" alt="placeholder-theme-icon" /> -->
 
 ## Test Case 2: Regular image (should load after the empty-src above)
 
