@@ -5,10 +5,8 @@ identifier: sysid07416_mongo_dev
 type: database
 owner: group:account/DevX_Team
 spec:
-  dependsOn:
-    - resource:account/sysid07416_mongo_dev
   system:
-    - system:account/test_system_1
+    - system:account/my_test_system
 metadata:
   description: MongoDB instance for Fuse services - Dev environment
   tags:
