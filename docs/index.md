@@ -3,6 +3,8 @@
 This page tests that image-wrapped links render and navigate correctly.
 ## Exact repro
 
+[![Click here to see the playlist](image.png)](https://youtube.com)
+
 
 ## Test Case 1: Empty src image before content images
 
@@ -36,6 +38,8 @@ These should all load correctly:
 ![Image C](image.png)
 
 ## Exact repro
+
+[![Click here to see the playlist](./images/video_thumbnails/playlist_title_slide_with_play_button.png)](https://onyourside.sharepoint.com/sites/TechConsulting/Lists/Single%20Page%20App%20GP%20Videos/AllItems.aspx?referrer=OfficeHome%2EWeb&referrerScenario=StreamStartPage%2DRecommended&isDarkMode=false&viewid=e5a48e4b%2D39c2%2D4801%2D89b6%2D1005cdb92a96&playlistLayout=playback&itemId=2)
 
 ## Expected Results
 
