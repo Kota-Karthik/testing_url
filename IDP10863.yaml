@@ -7,6 +7,8 @@ owner: group:account/DevX_Team
 spec:
   system:
     - system:account/my_test_system
+  dependsOn:
+    - resource:account/sysid07416_mongo_dev
 metadata:
   description: MongoDB instance for Fuse services - Dev environment
   tags:
