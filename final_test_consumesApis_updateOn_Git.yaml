@@ -17,3 +17,7 @@ spec:
     url: https://github.com/Kota-Karthik/testing_url/tree/main
   providesApis:
   - api:account/test_git6
+metadata:
+  tags:
+  - hello
+  - hi
